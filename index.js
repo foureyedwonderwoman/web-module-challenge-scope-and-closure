@@ -82,14 +82,14 @@ Use the finalScore function below to do the following:
 }
 */ 
 function finalScore(inn, numb){
- 
+  let score ={ "Home": 0 , "Away": 0}
   for (let i=0; i<numb; i++){
-  let away = inn
-  let home = inn
-  let score = {"Home":  + home , " Away":  + away}  
-  return score
+   score.Away += inn() 
+   score.Home += inn()
+    
   }  
-  finalScore(i)(inning, 9)
+  return score
+ 
 } 
 console.log(finalScore(inning, 9))
 
@@ -106,22 +106,34 @@ console.log(finalScore(inning, 9))
 /* ⚾️⚾️⚾️ Task 4: getInningScore() ⚾️⚾️⚾️
 Use the getInningScore() function below to do the following:
   1. Receive a callback function - you will pass in the inning function from task 2 as your argument 
-  2. Return an object with a score for home and a score for away that populates from invoking the inning callback function */
+  2. Return an object with a score for home and 
+  a score for away that populates from invoking 
+  the inning callback function */
 
-function getInningScore(/*Your Code Here */) {
-  /*Your Code Here */
+function getInningScore(inn) {
+  let score = {Home: 0, Away: 0}
+   score.Home = inn()
+   score.Away = inn()
+   return score
 }
-
+console.log(getInningScore(inning))
 
 /* ⚾️⚾️⚾️ Task 5: scoreboard() ⚾️⚾️⚾️
 Use the scoreboard function below to do the following:
   1. Receive the callback function `getInningScore` from Task 4
   2. Receive the callback function `inning` from Task 2
   3. Receive a number of innings to be played
-  4. Return an array where each of it's index values equals a string stating the
-  Home and Away team's scores for each inning.  Not the cummulative score.
-  5. If there's a tie at the end of the innings, add this message containing the score to the end of the array:  "This game will require extra innings: Away 12 - Home 12"  (see tie example below)
-     If there isn't a tie, add this message to the end of the array: "Final Score: Away 13 - Home 11"  (see no tie example below)
+  4. Return an array where each of it's index 
+  values equals a string stating the
+  Home and Away team's scores for each inning. 
+   Not the cummulative score.
+  5. If there's a tie at the end of the innings,
+   add this message containing the score to the end of the array:  
+   "This game will require extra innings: Away 12 - Home 12"
+     (see tie example below)
+     If there isn't a tie, add this message to the end of the
+      array: "Final Score: Away 13 - Home 11"  (see no tie example 
+        below)
   
   NO TIE example: invoking scoreboard(getInningScore,inning, 9) might return 
   an array of strings like this:
@@ -154,10 +166,11 @@ Use the scoreboard function below to do the following:
 ]  
   */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function scoreboard(func2,func1,numb) {
+  let board =[]
+  
 }
-
+scoreboard(getInningScore,inning,9)
 
 
 
